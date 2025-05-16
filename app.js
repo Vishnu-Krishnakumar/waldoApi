@@ -4,6 +4,12 @@ const bodyParser = require("body-parser");
 const localRoutes = require("./routes/locateRoutes");
 const app = express();
 
+app.use(
+    cors({
+        origin:"http://localhost:5173",
+        credentials: true,
+    })
+)
 app.use(express.json());
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
