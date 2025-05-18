@@ -18,7 +18,6 @@ async function dateTime(req,res){
     console.log(error);
     next(error);
   }
-  // res.json(Date.now());
 }
 
 module.exports ={
