@@ -3,6 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const localRoutes = require("./routes/locateRoutes");
 const timerRoutes = require("./routes/timerRoutes");
+const scoreRoutes = require("./routes/scoreRoutes")
 const app = express();
 
 app.use(
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use("/locate", localRoutes);
 app.use("/timer", timerRoutes);
-
+app.use("/score", scoreRoutes);
 
 app.listen(3000,()=>{
     console.log("Listening to port 3000");
