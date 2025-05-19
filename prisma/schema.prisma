@@ -36,5 +36,5 @@ model User {
 model highscore {
   id              Int         @id @default(autoincrement())
   username        String      @unique
-  time            Int          
+  time            Float          
 }

@@ -11,7 +11,7 @@ async function allScores(){
     const highScores = await prisma.highscore.findMany({
         take:10,
         orderBy:{
-            time:desc
+            time:"asc"
         }
     });
     return highScores;
@@ -20,8 +20,8 @@ async function allScores(){
 async function addScore(data){
     const addedScore = await prisma.highscore.create({
         data:{
-            username: data.userName,
-            time: data.time,
+            username: data.username,
+            time: parseFloat(data.time),
         }
     })
     return addedScore;

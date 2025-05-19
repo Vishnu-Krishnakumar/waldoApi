@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "highscore" ALTER COLUMN "time" SET DATA TYPE DOUBLE PRECISION;
