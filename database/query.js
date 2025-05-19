@@ -7,6 +7,28 @@ async function allChars(){
     return allChars;
 }
 
+async function allScores(){
+    const highScores = await prisma.highscore.findMany({
+        take:10,
+        orderBy:{
+            time:desc
+        }
+    });
+    return highScores;
+}
+
+async function addScore(data){
+    const addedScore = await prisma.highscore.create({
+        data:{
+            username: data.userName,
+            time: data.time,
+        }
+    })
+    return addedScore;
+}
+
 module.exports = {
     allChars,
+    allScores,
+    addScore,
 }

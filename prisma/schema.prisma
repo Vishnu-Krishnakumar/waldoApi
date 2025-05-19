@@ -32,3 +32,9 @@ model User {
   completed  Boolean @default(false) // did they find all characters?
   finishedAt DateTime?            // when they found the final character
 }
+
+model highscore {
+  id              Int         @id @default(autoincrement())
+  username        String      @unique
+  time            Int          
+}
