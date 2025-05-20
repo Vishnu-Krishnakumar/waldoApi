@@ -2,7 +2,7 @@ const query = require("../database/query");
 
 async function scorePost(req,res){
     console.log(req.body);
-    const result = await query.addScore(req.body.data);
+    const result = await query.addScore(req.body);
     res.json(result);
 }
 
